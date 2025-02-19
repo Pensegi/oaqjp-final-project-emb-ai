@@ -12,4 +12,4 @@ test_cases = {
 def test_assert_dominant_emotion():
     for text, emotion in test_cases.items():
         print(f"text: {text}: emotion:: {emotion}")
-        assert ed.emotion_detector(text) == emotion
+        assert ed.emotion_detector(text)["dominant_emotion"] == emotion
