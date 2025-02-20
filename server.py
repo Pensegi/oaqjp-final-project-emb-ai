@@ -11,7 +11,16 @@ def index():
 def emotionDetector():
     textToAnalyze = request.args.get("textToAnalyze")
     response = emotion_detector(textToAnalyze)
-    return response
+
+    text = "For the given statement, the system response is " \
+    f"'anger': {response["anger"]}, " \
+    f"'disgust': {response["disgust"]}, " \
+    f"'fear': {response["fear"]}, " \
+    f"'joy': {response["joy"]} and " \
+    f"'sadness': {response["sadness"]}. " \
+    f"The dominant emotion is {response["dominant_emotion"]}."
+
+    return text
 
 if __name__ == "__main__":
     app.run(debug=True)
