@@ -12,13 +12,16 @@ def emotionDetector():
     textToAnalyze = request.args.get("textToAnalyze")
     response = emotion_detector(textToAnalyze)
 
-    text = "For the given statement, the system response is " \
-    f"'anger': {response['anger']}, " \
-    f"'disgust': {response['disgust']}, " \
-    f"'fear': {response['fear']}, " \
-    f"'joy': {response['joy']} and " \
-    f"'sadness': {response['sadness']}. " \
-    f"The dominant emotion is <b>{response['dominant_emotion']}</b>."
+    if response['dominant_emotion'] == None:
+        text = "Invalid text! Please try again!"
+    else:
+        text = "For the given statement, the system response is " \
+        f"'anger': {response['anger']}, " \
+        f"'disgust': {response['disgust']}, " \
+        f"'fear': {response['fear']}, " \
+        f"'joy': {response['joy']} and " \
+        f"'sadness': {response['sadness']}. " \
+        f"The dominant emotion is <b>{response['dominant_emotion']}</b>."
 
     return text
 

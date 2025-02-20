@@ -8,7 +8,16 @@ def emotion_detector(text_to_analyse: str):
         json = { "raw_document": { "text": text_to_analyse } }
         )
 
-    if r.status_code == 200:
+    if r.status_code == 400:
+        return {
+            "anger": None, 
+            "disgust": None, 
+            "fear": None, 
+            "joy": None, 
+            "sadness": None, 
+            "dominant_emotion": None
+        }
+    elif r.status_code == 200:
         response_dict = json.loads(r.text)
         if "emotionPredictions" in response_dict:
             text = response_dict["emotionPredictions"][0]["emotion"]
