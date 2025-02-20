@@ -18,7 +18,7 @@ def emotionDetector():
     f"'fear': {response['fear']}, " \
     f"'joy': {response['joy']} and " \
     f"'sadness': {response['sadness']}. " \
-    f"The dominant emotion is {response['dominant_emotion']}."
+    f"The dominant emotion is <b>{response['dominant_emotion']}</b>."
 
     return text
 
