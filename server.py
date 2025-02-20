@@ -10,9 +10,8 @@ def index():
 @app.route('/emotionDetector')
 def emotionDetector():
     textToAnalyze = request.args.get("textToAnalyze")
-    print(textToAnalyze)
     response = emotion_detector(textToAnalyze)
-    return render_template('index.html', response=response)
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)
