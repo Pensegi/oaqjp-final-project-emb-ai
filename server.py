@@ -13,12 +13,12 @@ def emotionDetector():
     response = emotion_detector(textToAnalyze)
 
     text = "For the given statement, the system response is " \
-    f"'anger': {response["anger"]}, " \
-    f"'disgust': {response["disgust"]}, " \
-    f"'fear': {response["fear"]}, " \
-    f"'joy': {response["joy"]} and " \
-    f"'sadness': {response["sadness"]}. " \
-    f"The dominant emotion is {response["dominant_emotion"]}."
+    f"'anger': {response['anger']}, " \
+    f"'disgust': {response['disgust']}, " \
+    f"'fear': {response['fear']}, " \
+    f"'joy': {response['joy']} and " \
+    f"'sadness': {response['sadness']}. " \
+    f"The dominant emotion is {response['dominant_emotion']}."
 
     return text
 
